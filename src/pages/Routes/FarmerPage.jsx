@@ -1,9 +1,9 @@
-import FarmerHome from "../Components/Farmer/FarmerHome/FarmerHome"
+import Home from "../Components/Farmer/Home/Home"
 
 const FarmerPage = () => {
     return (
         <>
-            <FarmerHome />
+            <Home />
         </>
     )
 }

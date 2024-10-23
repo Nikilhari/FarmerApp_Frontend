@@ -1,5 +1,5 @@
-import styles from './Farmer.module.css';
-const FarmerHome = () => {
+import styles from './Home.module.css';
+const Home = () => {
   return (
     <>
       <div className={styles.farmer__carousel}>
@@ -10,4 +10,4 @@ const FarmerHome = () => {
   )
 }
 
-export default FarmerHome;
+export default Home;

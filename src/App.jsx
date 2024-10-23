@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Farmer from './pages/Components/Farmer/FarmerHome/FarmerHome'
 import UserPage from './pages/Routes/UserPage'
 import FarmerPage from './pages/Routes/FarmerPage'
 import Login from './pages/LoginRegister/Login'

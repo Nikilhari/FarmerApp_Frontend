@@ -5,27 +5,12 @@ import axios from 'axios';
 
 const Login = () => {
     const navigate = useNavigate();
-    const handleSubmit = (event, url, data) => {
-        event.preventDefault();
-        axios.post(url, data)
-            .then(res => {
-                if (res.data === "Success") {
-                    navigate('/home');
-                } else {
-                    alert("Enter valid credentials");
-                }
-            })
-            .catch(err => {
-                console.error("An error occurred:", err);
-            });
-    };
 
     const farmerSubmit = (event) => {
         const data = {
             farmerId: event.target.farmerId.value,
             farmerPassword: event.target.farmerPassword.value
         };
-        // handleSubmit(event, 'http://localhost:8001/login/farmer', data);
         event.preventDefault();
         axios.post('http://localhost:8001/login/farmer', data)
             .then(res => {
@@ -45,7 +30,6 @@ const Login = () => {
             userEmail: event.target.userEmail.value,
             userPassword: event.target.userPassword.value
         };
-        // handleSubmit(event, 'http://localhost:8001/login/user', data);
         event.preventDefault();
         axios.post('http://localhost:8001/login/user', data)
             .then(res => {
