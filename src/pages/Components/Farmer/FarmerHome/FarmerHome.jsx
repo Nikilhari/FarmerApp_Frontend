@@ -1,6 +1,5 @@
-import React from 'react'
 import styles from './Farmer.module.css';
-const Farmer = () => {
+const FarmerHome = () => {
   return (
     <>
       <div className={styles.farmer__carousel}>
@@ -11,4 +10,4 @@ const Farmer = () => {
   )
 }
 
-export default Farmer
+export default FarmerHome;

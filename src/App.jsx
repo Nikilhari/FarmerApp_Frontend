@@ -1,10 +1,21 @@
-import React from 'react'
-import Farmer from './pages/FarmerHome/Farmer'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Farmer from './pages/Components/Farmer/FarmerHome/FarmerHome'
+import UserPage from './pages/Routes/UserPage'
+import FarmerPage from './pages/Routes/FarmerPage'
+import Login from './pages/LoginRegister/Login'
+import Register from './pages/LoginRegister/Register'
 
 const App = () => {
   return (
     <>
-    <Farmer/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<UserPage />} />
+          <Route path='/farmer' element={<FarmerPage />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
