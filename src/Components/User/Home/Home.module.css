@@ -1,4 +1,4 @@
-.farmer__carousel{
+.user__carousel{
   height: 100vh;
   width: 100vw;
   color:white;
@@ -53,6 +53,7 @@
 }
 .button{
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 59px;
   width: 167px;

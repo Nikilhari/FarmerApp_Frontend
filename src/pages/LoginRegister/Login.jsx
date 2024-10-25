@@ -8,13 +8,14 @@ const Login = () => {
 
     const farmerSubmit = (event) => {
         const data = {
-            farmerId: event.target.farmerId.value,
-            farmerPassword: event.target.farmerPassword.value
+            farmerCode: event.target.farmerId.value,
+            password: event.target.farmerPassword.value
         };
         event.preventDefault();
-        axios.post('http://localhost:8001/login/farmer', data)
+        axios.post('http://localhost:6996/farmer/login', data)
             .then(res => {
                 if (res.data === "Success") {
+                    localStorage.setItem('farmerCode',data.farmerCode)
                     navigate('/farmer');
                 } else {
                     alert("Enter valid credentials");
@@ -27,14 +28,15 @@ const Login = () => {
 
     const userSubmit = (event) => {
         const data = {
-            userEmail: event.target.userEmail.value,
-            userPassword: event.target.userPassword.value
+            email: event.target.userEmail.value,
+            password: event.target.userPassword.value
         };
         event.preventDefault();
-        axios.post('http://localhost:8001/login/user', data)
+        axios.post('http://localhost:6996/User/login', data)
             .then(res => {
                 if (res.data === "Success") {
-                    navigate('/home');
+                    localStorage.setItem('userEmail',data.email);
+                    navigate('/');
                 } else {
                     alert("Enter valid credentials");
                 }

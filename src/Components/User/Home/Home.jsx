@@ -5,7 +5,7 @@ import { GiThreeLeaves } from "react-icons/gi";
 const Home = () => {
   return (
     <>
-      <div className={styles.farmer__carousel}>
+      <div className={styles.user__carousel}>
         <img src="src/assets/R.jpeg" alt="" className={styles.farmer__carousel__img} />
           <div className={styles.user__navbar}>
             <div className={styles.user__navbar_inner}>

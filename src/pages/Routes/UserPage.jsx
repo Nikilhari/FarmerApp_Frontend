@@ -1,12 +1,13 @@
-import { BrowserRouter, Routes } from "react-router-dom"
+
+import Home from "../../Components/User/Home/Home"
+import Products from "../../Components/User/Products/Products"
 
 const UserPage = () => {
     return (
-        <BrowserRouter>
-            <Routes>
-
-            </Routes>
-        </BrowserRouter>
+       <>
+       <Home/>
+       <Products/>
+       </>
     )
 }
 

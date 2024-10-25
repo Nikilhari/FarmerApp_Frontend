@@ -1,0 +1,32 @@
+.product__img{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+}
+.product__description{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+}
+.section{
+    padding: 6rem 0 2rem;
+  }
+  
+  .section__title {
+    font-size: 2.25rem;
+    padding-bottom: 2rem;
+    color: #e2b326;
+    text-align: center;
+  }

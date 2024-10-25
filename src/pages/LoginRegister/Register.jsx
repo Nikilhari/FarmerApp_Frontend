@@ -3,6 +3,7 @@ import styles from './LoginRegister.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+
 const Register = () => {
     const navigate = useNavigate();
     const farmerSubmit = (event) => {
@@ -32,12 +33,12 @@ const Register = () => {
         }
         else {
             const values = {
-                farmerName: event.target.farmerName.value,
-                farmerPhone: event.target.farmerPhone.value,
-                farmerId: event.target.farmerId.value,
-                farmerPassword: event.target.farmerPassword.value
+                farmerCode: event.target.farmerId.value,
+                name: event.target.farmerName.value,
+                mobile: event.target.farmerPhone.value,
+                password: event.target.farmerPassword.value
             };
-            axios.post('http://localhost:8001/register/farmer', values)
+            axios.post('http://localhost:6996/farmer/register', values)
                 .then(res => { navigate('/') })
                 .catch(err => { console.log(err) });
         }
@@ -60,13 +61,13 @@ const Register = () => {
         }
         else {
             const values = {
-                userName: event.target.userName.value,
-                userPhone: event.target.userPhone.value,
-                userEmail: event.target.userEmail.value,
-                userPassword: event.target.userPassword.value
+                email: event.target.userEmail.value,
+                name: event.target.userName.value,
+                mobile: event.target.userPhone.value,
+                password: event.target.userPassword.value
             };
-            axios.post('http://localhost:8001/register/user', values)
-                .then(res => { navigate('/') })
+            axios.post('http://localhost:6996/User/register', values)
+                .then(res => { navigate('/login') })
                 .catch(err => { console.log(err) });
         }
 

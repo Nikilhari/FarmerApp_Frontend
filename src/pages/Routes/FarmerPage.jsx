@@ -1,11 +1,9 @@
-import Home from "../../Components/Farmer/Home/Home"
+import React from 'react'
 
 const FarmerPage = () => {
-    return (
-        <>
-            <Home/>
-        </>
-    )
+  return (
+    <div>FarmerPage</div>
+  )
 }
 
 export default FarmerPage
