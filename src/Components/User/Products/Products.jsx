@@ -1,56 +1,83 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styles from './Products.module.css';
+import styles from "./Products.module.css";
 const Products = () => {
-  const [vegetables, setVegetables] = useState({}); // Holds the vegetable data
-  const [loading, setLoading] = useState(true); // Manages loading state
-  const [error, setError] = useState(null); // Handles any errors
+  const [vegetables, setVegetables] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch the data from the backend when the component mounts
     axios
       .get("http://localhost:6996/vegetables/")
       .then((response) => {
-        console.log(response);
-        setVegetables(response.data); // Store the response data in state
-        setLoading(false); // Disable loading once the data is fetched
+        setVegetables(response.data);
+        setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
-        setError(error.message); // Set the error message
-        setLoading(false); // Disable loading in case of an error
+        setError(error.message);
+        setLoading(false);
       });
   }, []);
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  const addToCart = (productName, productData) => {
+    const email = localStorage.getItem("userEmail"); // Retrieve user email from local storage
+
+    if (!email) {
+      alert("Please log in to add items to the cart.");
+      return;
+    }
+
+    const cartItem = {
+      email: email,
+      vegetableName: productName,
+      price: productData.averagePrice,
+      quantity: 1,
+    };
+
+    axios
+      .post("http://localhost:6996/cart/add", cartItem)
+      .then((response) => {
+        alert("Item added to cart!");
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.error("An error occurred:", error);
+        alert("Failed to add item to cart.");
+      });
+  };
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className={styles.section}>
-      <h1 className={styles.section__title}>Vegetable Prices</h1>
-      <div className={styles.products}>
-        {Object.entries(vegetables).map(([name, data]) => (
-          <div
-            key={name}
-            className={styles.product}
-          >
-            <img
-              src={data.imageUrl}
-              alt={name}
-              className={styles.product__img}
-            />
-            <div className={styles.product__description}>
-            <h2 className={styles.product__name}>{name}</h2>
-            <p className={styles.product__price}>Average Price: {data.averagePrice}</p>
+    <>
+      <div className={styles.section}>
+        <h1 className={styles.section__title}>Vegetables</h1>
+        <div className={styles.products}>
+          {Object.entries(vegetables).map(([name, data]) => (
+            <div key={name} className={styles.product}>
+              <img
+                src={data.imageUrl}
+                alt={name}
+                className={styles.product__img}
+              />
+              <div className={styles.product__description}>
+                <h2 className={styles.product__name}>{name}</h2>
+                <p className={styles.product__price}>
+                  Price: ₹ {data.averagePrice}
+                </p>
+              </div>
+              <button
+                className={`${styles.add__cart} ${styles.make__retro}`}
+                onClick={() => addToCart(name, data)}
+              >
+                Add to cart
+              </button>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-      </div>
+    </>
   );
 };
 

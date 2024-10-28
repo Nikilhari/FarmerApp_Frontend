@@ -51,6 +51,39 @@
     letter-spacing: .7rem;
   }
 }
+
+.cartSidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 1000px;
+  height: 100%;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); */
+  transition: right 0.3s ease;
+  z-index: 1001;
+  overflow-y: auto;
+}
+
+.cartSidebarOpen {
+  right: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
 .button{
   display: flex;
   justify-content: center;
@@ -59,7 +92,6 @@
   width: 167px;
   background-color: #f1d069;
   transition: ease-in-out 0.2s;
-  border: none;
   border-radius: 12px;
   font-size: 10px;
   font-weight: 600;
