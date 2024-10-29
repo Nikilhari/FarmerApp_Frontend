@@ -41,17 +41,17 @@ const vegetables = [
   {
     name: "Mushroom",
     imageUrl:
-      "https://th.bing.com/th/id/OIP.S_IPr534azsGNzQJvzjBoQAAAA?rs=1&pid=ImgDetMain",
+      "https://nypost.com/wp-content/uploads/sites/2/2017/01/shutterstock_253955395.jpg?quality=90&strip=all&w=1200",
   },
   {
     name: "Bitter Gourd",
     imageUrl:
-      "https://th.bing.com/th/id/OIP.S_IPr534azsGNzQJvzjBoQAAAA?rs=1&pid=ImgDetMain",
+      "https://storables.com/wp-content/uploads/2023/12/how-long-to-germinate-bitter-gourd-1701586708.jpg",
   },
   {
     name: "Radish",
     imageUrl:
-      "https://th.bing.com/th/id/OIP.S_IPr534azsGNzQJvzjBoQAAAA?rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/OIP.o-q8kRw_4WWyTqc4J7380QHaHa?rs=1&pid=ImgDetMain",
   },
 ];
 
@@ -134,6 +134,7 @@ const Sell = () => {
           value={price}
           onChange={handlePriceChange}
           className={styles.input}
+          min={0}
         />
         <button onClick={handleSubmit} className={styles.submitButton}>
           Submit Price
