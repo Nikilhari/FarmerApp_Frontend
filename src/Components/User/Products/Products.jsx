@@ -64,7 +64,8 @@ const Products = () => {
               <div className={styles.product__description}>
                 <h2 className={styles.product__name}>{name}</h2>
                 <p className={styles.product__price}>
-                  Price: ₹ {data.averagePrice}
+                  Price: ₹{" "}
+                  {data.averagePrice ? data.averagePrice.toFixed(2) : "0.00"}
                 </p>
               </div>
               <button

@@ -1,0 +1,29 @@
+.aboutusContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutusMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.aboutusHeader {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.aboutusContent {
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding: 0 70px;
+    text-align: center;
+    line-height: 1.5;
+}

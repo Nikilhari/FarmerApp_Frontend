@@ -1,9 +1,13 @@
-import React from 'react'
-
+import React from "react";
+import Home from "../../Components/Farmer/Home/Home";
+import Sell from "../../Components/Farmer/Sell/Sell";
 const FarmerPage = () => {
   return (
-    <div>FarmerPage</div>
-  )
-}
+    <>
+      <Home />
+      <Sell />
+    </>
+  );
+};
 
-export default FarmerPage
+export default FarmerPage;
