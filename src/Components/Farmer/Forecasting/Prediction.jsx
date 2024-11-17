@@ -12,7 +12,7 @@ function Prediction() {
         column_name: columnName,
         forecast_periods: 10,
       });
-      setForecast(response.data.forecast); // Extracting forecast array directly
+      setForecast(response.data.forecast);
     } catch (error) {
       console.error("Error fetching forecast:", error);
     }

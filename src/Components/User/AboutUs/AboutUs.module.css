@@ -27,3 +27,13 @@
     text-align: center;
     line-height: 1.5;
 }
+.section{
+    padding: 6rem 0 2rem;
+  }
+  
+  .section__title {
+    font-size: 2.25rem;
+    padding-bottom: 2rem;
+    color: #e2b326;
+    text-align: center;
+  }

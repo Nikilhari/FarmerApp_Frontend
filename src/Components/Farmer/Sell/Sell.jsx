@@ -60,7 +60,6 @@ const Sell = () => {
   const [price, setPrice] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
-  // Handle vegetable selection
   const handleVegetableChange = (e) => {
     const vegName = e.target.value;
     setSelectedVegetable(vegName);
@@ -68,12 +67,10 @@ const Sell = () => {
     setImageUrl(vegetable ? vegetable.imageUrl : "");
   };
 
-  // Handle price change
   const handlePriceChange = (e) => {
     setPrice(e.target.value);
   };
 
-  // Submit selected vegetable and price
   const handleSubmit = async () => {
     const farmercode = localStorage.getItem("farmerCode");
     if (!farmercode) {

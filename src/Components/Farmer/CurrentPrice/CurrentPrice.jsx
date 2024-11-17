@@ -10,11 +10,8 @@ const cleanData = (data) => {
 };
 
 const cleanedData = cleanData(rawData);
-
 const CurrentPrice = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
-  // Filter data based on search term and skip the first two rows
   const filteredData = cleanedData
     .slice(2)
     .filter((item) =>
@@ -23,7 +20,7 @@ const CurrentPrice = () => {
 
   return (
     <div className={styles.section}>
-      <p className={styles.section__title}>Fruit Price List</p>
+      <p className={styles.section__title}>Current Price List</p>
       <div className={styles.section__search}>
         <input
           type="text"
